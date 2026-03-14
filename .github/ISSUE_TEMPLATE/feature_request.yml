@@ -1,0 +1,52 @@
+name: Feature Request
+description: Suggest a new feature or improvement for Doculent
+labels: ["feature", "triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have an idea that would make Doculent better? Tell us about the problem you're trying to solve and we'll figure out the best solution together.
+
+  - type: textarea
+    id: problem
+    attributes:
+      label: Problem statement
+      description: What problem does this solve? Who is affected and how often?
+      placeholder: "As a user who processes insurance claims, I often need to re-extract documents when the webhook endpoint is temporarily unavailable. Currently there's no way to retry a delivery without re-triggering the entire extraction."
+    validations:
+      required: true
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: Proposed solution
+      description: What would you like to see built? Be specific but hold it loosely — the implementation may evolve.
+    validations:
+      required: true
+
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives considered
+      description: Have you tried any workarounds? Are there alternative approaches you've considered?
+
+  - type: dropdown
+    id: area
+    attributes:
+      label: Area
+      description: Which part of Doculent does this relate to?
+      options:
+        - Dashboard / UI
+        - Document processing / extraction
+        - Integrations
+        - API
+        - Security / compliance
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: Additional context
+      description: Screenshots, mockups, examples from other tools, or anything else that helps illustrate the request.

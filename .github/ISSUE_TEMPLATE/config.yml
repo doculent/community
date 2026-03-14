@@ -1,0 +1,11 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Ask a question
+    url: https://github.com/doculent/community/discussions/new?category=q-a
+    about: Get help from the community and the Doculent team.
+  - name: Chat on Discord
+    url: https://discord.gg/VvqKKm2Ttz
+    about: Join our Discord for real-time conversation.
+  - name: Documentation
+    url: https://docs.doculent.io
+    about: Check the docs — your answer might already be there.
