@@ -1,46 +1,85 @@
-# Contributing to Doculent
+# Contributing
 
-Thanks for your interest in making Doculent better! While Doculent is closed-source, this community repo is the place to shape the product through bug reports, feature requests, and discussions.
+We welcome contributions to the Doculent open-source skills collection. Whether it's a new skill, an improvement to an existing one, or a bug fix — we want to hear from you.
 
-## Ways to contribute
+## Adding a New Skill
 
-### Report bugs
+Each skill lives in its own directory under `skills/`:
 
-If something isn't working right, [open a bug report](https://github.com/doculent/community/issues/new?template=bug_report.yml). Good bug reports include:
+```
+skills/your-skill-name/
+├── SKILL.md    # Skill definition (YAML frontmatter + Claude Code instructions)
+└── README.md   # Human-readable docs (install, usage, examples)
+```
 
-- A clear description of what happened vs. what you expected
-- Steps to reproduce the issue
-- Browser/OS information
-- Screenshots or recordings if applicable
+### SKILL.md Format
 
-### Request features
+```yaml
+---
+name: your-skill-name
+version: 1.0.0
+description: |
+  What the skill does. This text is used for discoverability
+  in Claude Code, so be specific and practical.
+allowed-tools:
+  - Read
+  - Write
+  - Edit
+  - Bash
+  - Glob
+  - Grep
+metadata:
+  tags: relevant, search, keywords
+  author: Your Name or Org
+  license: MIT
+---
 
-Have an idea? [Submit a feature request](https://github.com/doculent/community/issues/new?template=feature_request.yml). The best requests focus on the **problem** you're trying to solve, not just the solution. This gives us room to find the best approach.
+# Skill Title
 
-### Join discussions
+Instructions for Claude Code to execute the skill...
+```
 
-Head to [Discussions](https://github.com/doculent/community/discussions) to:
+### README.md Format
 
-- **Ask questions** about how to use Doculent
-- **Share tips** and workflows with other users
-- **Give feedback** on recent releases
-- **Suggest ideas** that aren't fully formed yet
+Each skill README should include:
 
-### Help other users
+1. **One-line description** — what it does
+2. **Install command** — `claude install doculent/community/skills/your-skill-name`
+3. **Dependencies** — any system tools required
+4. **Usage examples** — real commands with real output
+5. **How it works** — brief technical explanation
 
-If you know the answer to someone's question, jump in! Community support is incredibly valuable and helps everyone.
+### Guidelines
 
-## Guidelines
+- Keep skills focused on document intelligence — parsing, extraction, analysis, transformation
+- Include realistic usage examples with sample output
+- Document all external dependencies
+- Test with multiple document types and edge cases before submitting
+- Don't add unnecessary dependencies — prefer tools already available in Claude Code
 
-- **Be respectful.** We're all here to make Doculent better.
-- **Search first.** Check existing issues and discussions before creating a new one — someone may have already raised it.
-- **One issue per report.** Don't bundle multiple bugs or requests into a single issue.
-- **Provide context.** The more detail you give, the faster we can help.
+## Improving Existing Skills
 
-## Security vulnerabilities
+- Open an issue first to discuss the change
+- Keep backward compatibility — don't break existing usage patterns
+- Update the README if behavior changes
+- Add tests or examples that demonstrate the improvement
 
-If you discover a security vulnerability, **do not open a public issue.** Email [hi@doculent.io](mailto:hi@doculent.io) and we'll respond promptly.
+## Pull Request Process
+
+1. Fork the repository
+2. Create a branch (`git checkout -b feature/your-improvement`)
+3. Make your changes
+4. Test the skill in Claude Code
+5. Open a pull request with a clear description
+
+## Reporting Issues
+
+Open an issue with:
+- The skill name
+- What you expected
+- What actually happened
+- Your OS and Claude Code version
 
 ## Code of Conduct
 
-Be kind, be constructive, be respectful. We reserve the right to remove content or restrict access for anyone who makes this community unwelcoming.
+Be respectful. Write clear commit messages. Help others when you can.
